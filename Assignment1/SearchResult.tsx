@@ -21,32 +21,36 @@ const SearchResult = () => {
                 </View>
             </View>
             <View style = {[styles.boxStyle, styles.box2]}>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table1.jpeg')} style = {styles.resultImage} />
                     </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text>Round Teak Wood Dining Table</Text>
+                        <Text>10 In Stock</Text>
+                    </View>
                 </View>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table2.jpeg')} style = {styles.resultImage} />
                     </View>
                 </View>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table3.webp')} style = {styles.resultImage} />
                     </View>
                 </View>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table4.webp')} style = {styles.resultImage} />
                     </View>
                 </View>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table5.jpeg')} style = {styles.resultImage} />
                     </View>
                 </View>
-                <View style = {styles.box2content}>
+                <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table6.jpeg')} style = {styles.resultImage} />
                     </View>
@@ -135,7 +139,7 @@ const styles = StyleSheet.create({
         flexDirection : Platform.OS == "web" ? "row" : "column",
         flexWrap : Platform.OS == "web" ? "wrap" : "nowrap"
     },
-    box2content : {
+    productContainer : {
         backgroundColor : "#E0E0E0",
         flex : 0.3,
         margin : Platform.OS == "web" ? 5 : 3,
@@ -147,13 +151,15 @@ const styles = StyleSheet.create({
         flexDirection : "row",
         position : "relative",
         alignItems : "center",
-        flex : 1,
         margin : 8
     },
     resultImage : {
-        width : 120,
-        height : 90,
+        width : Platform.OS == "web" ? 220 : 120,
+        height : Platform.OS == "web" ? 190 : 90,
         resizeMode : "cover",
+    },
+    descriptionContainer : {
+        
     }
 })
 
