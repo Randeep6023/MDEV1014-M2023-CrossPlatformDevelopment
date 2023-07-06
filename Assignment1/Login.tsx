@@ -13,7 +13,7 @@ const Login = () => {
     <View style={styles.container}>
       {/*<Image style={styles.image} source={require('./assets/cartIcon.png')} />*/}
       <View style={styles.subContainer}>
-        <Text style={styles.logo}>OneStopShop</Text>
+        <Text style={styles.logo}>OneStopShop </Text>
         <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
