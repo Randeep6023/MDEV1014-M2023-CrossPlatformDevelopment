@@ -2,8 +2,6 @@ import React from "react";
 import { Button, Platform, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View, Image } from "react-native";
 
-const isWeb = Platform.OS ==  "web"
-
 const SearchResult = () => {
     return(
         <SafeAreaView style = {styles.wrapper}>
