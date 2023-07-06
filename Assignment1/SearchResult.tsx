@@ -235,6 +235,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#66BB6A',
         justifyContent : "flex-start",
         flexDirection : "row",
+        marginTop : Platform.OS == "android" ? 20 : undefined
     },
     textArea : {
         flex : 1,
