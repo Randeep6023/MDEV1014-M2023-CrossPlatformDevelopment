@@ -1,6 +1,8 @@
 import React from "react";
-import { Platform, SafeAreaView, StyleSheet } from "react-native";
+import { Button, Platform, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View, Image } from "react-native";
+
+const isWeb = Platform.OS ==  "web"
 
 const SearchResult = () => {
     return(
@@ -12,6 +14,8 @@ const SearchResult = () => {
                 </View>
                 <Image source={require('./assets/cartIcon.png')} style = {styles.cartIcon} />
             </View>
+
+
             <View style = {[styles.boxStyle, styles.box1]}>
                 {/* <Image source={require('./assets/menuImage.jpg')} style = {styles.menuIcon}/> */}
                 <View style = {styles.box1content}>
@@ -20,39 +24,193 @@ const SearchResult = () => {
                     <Image source = {require('./assets/cancelIcon.png')} style = {styles.cancelIcon} />
                 </View>
             </View>
+
+
             <View style = {[styles.boxStyle, styles.box2]}>
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table1.jpeg')} style = {styles.resultImage} />
                     </View>
                     <View style = {styles.descriptionContainer}>
-                        <Text>Round Teak Wood Dining Table</Text>
-                        <Text>10 In Stock</Text>
+                        <Text style = {styles.productName}>Round Teak Wood Dining Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$100</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$100</Text><Text>10 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                        
                     </View>
                 </View>
+
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table2.jpeg')} style = {styles.resultImage} />
                     </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text style = {styles.productName}>Brown Wood Round Coffee Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$180</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$180</Text><Text>4 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
+
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table3.webp')} style = {styles.resultImage} />
                     </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text style = {styles.productName}>Modern Round Coffee Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$230</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$230</Text><Text>20 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
+
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table4.webp')} style = {styles.resultImage} />
                     </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text style = {styles.productName}>Modern Round Coffee Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$199</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$199</Text><Text>6 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
+
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table5.jpeg')} style = {styles.resultImage} />
                     </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text style = {styles.productName}>Modern Round Coffee Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$160</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$160</Text><Text>15 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
+
                 <View style = {styles.productContainer}>
                     <View style = {styles.imageContainer}>
                         <Image source={require('./assets/table6.jpeg')} style = {styles.resultImage} />
+                    </View>
+                    <View style = {styles.descriptionContainer}>
+                        <Text style = {styles.productName}>Modern Round Coffee Table</Text>
+                        <View style = {styles.starContainer}>
+                            {!(Platform.OS == "web") && (
+                                <Text style = {styles.price}>$240</Text>
+                            )}
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starFilled.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                            <Image source = {require('./assets/starEmpty.jpeg')} style = {styles.ratingImage} />
+                        </View>
+
+                        {Platform.OS == "web" && (
+                            <><Text style={styles.price}>$240</Text><Text>4 in stock</Text></>
+                        )}
+                        <View style = {styles.buttonContainer}>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Buy</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style = {styles.buttonStyle}>
+                                <Text>Add to cart</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             </View>
@@ -159,7 +317,45 @@ const styles = StyleSheet.create({
         resizeMode : "cover",
     },
     descriptionContainer : {
-        
+        marginTop : 8,
+        marginBottom : 8,
+    },
+    productName : {
+        fontSize : Platform.OS == "web" ? 20 : 15,
+        fontWeight : "bold"
+    },
+    starContainer : {
+        flexDirection : "row"
+    },
+    ratingImage : {
+        marginTop : 8,
+        marginBottom : 2,
+        width : 20,
+        height : 20,
+        resizeMode : "cover"
+    },
+    price : {
+        fontWeight : "900",
+        fontSize : Platform.OS == "web" ? 30 : 20,
+        marginTop : 8,
+        marginRight : 4
+    },
+    buttonContainer : {
+        flexDirection : "row",
+        flexWrap : Platform.OS == "web" ? "wrap" : "nowrap",
+        marginTop : Platform.OS == "web" ? 3 : 1.5
+    },
+    buttonStyle : {
+        backgroundColor : "#FDD835",
+        borderRadius : 5,
+        borderColor : "grey",
+        borderWidth : 1,
+        height : Platform.OS == "web" ? 40 : 25,
+        marginTop : 8,
+        marginLeft : 5,
+        width : Platform.OS == "web" ? "40%" : "35%",
+        alignItems : "center",
+        justifyContent : "center"
     }
 })
 
