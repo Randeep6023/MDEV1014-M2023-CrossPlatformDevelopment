@@ -82,13 +82,15 @@ const styles = StyleSheet.create({
         width : "100%",
         padding : 10,
         //marginTop : 10,
-        backgroundColor : "white"
+        backgroundColor : "white",
+        alignItems: "center",
     },
     topBar : {
         backgroundColor: '#66BB6A',
         justifyContent : "flex-start",
         flexDirection : "row",
-        marginTop : Platform.OS == "android" ? 20 : undefined
+        marginTop : Platform.OS == "android" ? 20 : undefined,
+        alignItems: "center",   
     },
     textArea : {
         flex : 1,
@@ -99,7 +101,9 @@ const styles = StyleSheet.create({
     screenText : {
         alignSelf : "center",
         justifyContent : "center",
-        fontSize : 30
+        fontSize : 30,
+        justifyContent : Platform.OS == "web" ? "center" : "flex-start",
+        alignItems: "center",
     },
   
 
@@ -123,16 +127,20 @@ const styles = StyleSheet.create({
     box2 : {
         flex : 1,
         justifyContent : Platform.OS == "web" ? "center" : "flex-start",
-        flexDirection : Platform.OS == "web" ? "row" : "column",
+        flexDirection : "column",
         flexWrap : Platform.OS == "web" ? "wrap" : "nowrap"
     },
     productContainer : {
         backgroundColor : "#E0E0E0",
         flex : 0.3,
         margin : Platform.OS == "web" ? 5 : 3,
-        //flex : Platform.OS == "web" ? 1 : 0.3,
+        flex : Platform.OS == "web" ? 1 : 0.3,
+        borderRadius: 10,
+        //justifyContent: 'center'
+        //alignItems: "center"
         flexDirection : "row",
         minWidth : Platform.OS == "web" ? "49%" : undefined,
+        height: 150,
     },
 
 
