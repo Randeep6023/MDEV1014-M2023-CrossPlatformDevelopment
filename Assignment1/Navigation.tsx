@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Platform, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
+import { Button, ImageBackground, Platform, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View, Image } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
@@ -44,27 +44,39 @@ const Navigation = () => {
 
             <View style = {[styles.boxStyle, styles.box2]}>
                 <TouchableOpacity style = {styles.productContainer} onPress={Home}>
-                    <Text style={styles.textArea}>Home Page</Text>
+                    <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/home.webp')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Home Page</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Login}>
-                    <Text style={styles.textArea}>Login</Text>
+                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/login.avif')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Login</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={SearchResult}>
-                    <Text style={styles.textArea}>Search Result</Text>
+                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/searchresult.jpeg')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Search Result</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Cart}>
-                    <Text style={styles.textArea}>Cart</Text>
+                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/cart.jpg')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Cart</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Profile}>
-                    <Text style={styles.textArea}>Profile</Text>
+                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/profile.webp')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Profile</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={OrderHistory}>
-                    <Text style={styles.textArea}>Order History</Text>
+                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/orderhistory.jpg')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Order History</Text>
+                    </ImageBackground>
                 </TouchableOpacity>
             </View>
 
@@ -141,6 +153,12 @@ const styles = StyleSheet.create({
         flexDirection : "row",
         minWidth : Platform.OS == "web" ? "49%" : undefined,
         height: 150,
+    },
+    productImage: {
+        flex: 1,
+        resizeMode: 'cover',
+        width: '100%',
+        height: '100%',
     },
 
 
