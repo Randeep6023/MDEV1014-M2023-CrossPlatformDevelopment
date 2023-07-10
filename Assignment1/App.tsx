@@ -10,6 +10,7 @@ import Home from './Home';
 import Cart from './Cart';
 import Profile from './Profile';
 import OrderHistory from './OrderHistory';
+import Signup from './Signup';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,7 @@ const App = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="SearchResult" component={SearchResult} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="OrderHistory" component={OrderHistory} />
