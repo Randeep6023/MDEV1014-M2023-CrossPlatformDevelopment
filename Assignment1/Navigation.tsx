@@ -44,37 +44,37 @@ const Navigation = () => {
 
             <View style = {[styles.boxStyle, styles.box2]}>
                 <TouchableOpacity style = {styles.productContainer} onPress={Home}>
-                    <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/home.webp')} style={styles.productImage}>
+                    <ImageBackground source={require('./assets/home.webp')} style={styles.productImage}>
                         <Text style={styles.textArea}>Home Page</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Login}>
-                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/login.avif')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/login.avif')} style={styles.productImage}>
                         <Text style={styles.textArea}>Login</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={SearchResult}>
-                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/searchresult.jpeg')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/searchresult.jpeg')} style={styles.productImage}>
                         <Text style={styles.textArea}>Search Result</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Cart}>
-                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/cart.jpg')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/cart.jpg')} style={styles.productImage}>
                         <Text style={styles.textArea}>Cart</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Profile}>
-                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/profile.webp')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/profile.webp')} style={styles.productImage}>
                         <Text style={styles.textArea}>Profile</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={OrderHistory}>
-                <ImageBackground source={require('/Users/janakmakwana/Desktop/MDEV1014-M2023-CrossPlatformDevelopment/Assignment1/assets/orderhistory.jpg')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/orderhistory.jpg')} style={styles.productImage}>
                         <Text style={styles.textArea}>Order History</Text>
                     </ImageBackground>
                 </TouchableOpacity>
