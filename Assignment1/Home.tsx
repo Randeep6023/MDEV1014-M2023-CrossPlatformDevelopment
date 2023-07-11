@@ -4,10 +4,12 @@ import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, Imag
 const Flex = () => {
   return (
     <View style={styles.container}>
-      <SearchBox />
-      <ContentList />
-      <HomeScreen />
-      <DescriptionItems/>
+      <ScrollView>
+        <SearchBox />
+        <ContentList />
+        <HomeScreen />
+        <DescriptionItems/>
+      </ScrollView>
     </View>
   );
 };
@@ -62,7 +64,7 @@ const ContentList = () => {
 const DescriptionItems =() =>{
 
   return(
-      <ScrollView>
+      <View>
           <Text style={styles.categoryText}>Dresses</Text>
           <TouchableOpacity style={styles.descriptionItem}>
             <Image source={require('./assets/Fashion1.png')} style={styles.ImageWrapper} />
@@ -74,18 +76,13 @@ const DescriptionItems =() =>{
             <Text style={styles.DescriptionStyle}>NIKA Full Length Frock(Black)</Text>
             <Text>50 CAD</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.descriptionItem}>
-            <Image source={require('./assets/Fashion3.png')} style={styles.ImageWrapper}/>
-            <Text style={styles.DescriptionStyle}>Mens Fashion</Text>
-            <Text>Starts from 40 CAD</Text>
-          </TouchableOpacity>
-      </ScrollView >
+      </View >
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'stretch',
     paddingTop: Platform.OS === 'android' ? 0 : 0, // Adjust top padding for Android
     backgroundColor: '#66BB6A',
   },
@@ -93,7 +90,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontSize: Platform.OS == "web" ? 70 : "25",
+    fontSize: Platform.OS == "web" ? 70 : 25,
     color: '#333',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -138,8 +135,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   ImageWrapper: {
-    width: '100%',
-    height: 170,
+    alignContent:'center',
+    justifyContent:'space-evenly',
     marginVertical: 10,
   },
   DescriptionStyle :{
@@ -155,6 +152,7 @@ const SBStyles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     marginTop: 5,
+    backgroundColor:'white',
   },
   input: {
     height: 20,
