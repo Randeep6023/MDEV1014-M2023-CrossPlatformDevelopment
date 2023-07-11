@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView, StyleSheet,TouchableOpacity,FlexAlignType, TextInput, ImageBackground, Platform, Image } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, Image, Platform, ScrollView } from 'react-native';
 
-const Flex = () =>{
-  return(
-    <View style={styles.Felxcontainer}>
-      <View style={styles.titleContainer}><HomeScreen/></View>
-      <View style={SBStyles.container}><SearchBox /></View>
-      <View style={styles.imagecontainer}><ContentList /></View>
+const Flex = () => {
+  return (
+    <View style={styles.container}>
+      <HomeScreen />
+      <SearchBox />
+      <ContentList />
+      <DescriptionItems/>
     </View>
-  )
-}
+  );
+};
 
 const HomeScreen = () => {
-  const [alignSelf, setAlignSelf] = useState<FlexAlignType>('stretch');
   return (
-    
-    <ImageBackground source={require('./assets/home.webp')} style = {styles.titleBG}>
+    <View style={styles.titleContainer}>
+      <Image source={require('./assets/home.webp')} style={styles.titleBG} />
       <Text style={styles.title}>Shop it!</Text>
-    </ImageBackground>
-    
+    </View>
   );
 };
 
 const SearchBox = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
 
   return (
-    <View>
+    <View style={SBStyles.container}>
       <TextInput
         style={SBStyles.input}
         placeholder="Search"
@@ -38,133 +37,112 @@ const SearchBox = () => {
 };
 
 const ContentList = () => {
-  return(
-    <View>
-      <TouchableOpacity>
-        <Image source = {require('./assets/GymWear.png')} style={styles.GymWearWrapper}/>
-        <Text style={styles.GymWeartext}>Gym Wear</Text>
+  return (
+    <View style={styles.imagecontainer}>
+      <TouchableOpacity style={styles.itemContainer}>
+        <Image source={require('./assets/GymWear.png')} style={styles.itemImage} />
+        <Text style={styles.itemText}>Gym Wear</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Image source = {require('./assets/Watches.png')} style={styles.WatchesWrapper}/>
-        <Text style={styles.Watchestext}>Watches</Text>
+      <TouchableOpacity style={styles.itemContainer}>
+        <Image source={require('./assets/Shoes.png')} style={styles.itemImage} />
+        <Text style={styles.itemText}>Shoes</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Image source = {require('./assets/Shoes.png')} style={styles.ShoesWrapper}/>
-        <Text style={styles.Shoestext}>Shoes</Text>
+      <TouchableOpacity style={styles.itemContainer}>
+        <Image source={require('./assets/Trousers.png')} style={styles.itemImage} />
+        <Text style={styles.itemText}>Trousers</Text>
       </TouchableOpacity>
-      <TouchableOpacity>
-        <Image source = {require('./assets/Trousers.png')} style={styles.TrousersWrapper}/>
-        <Text style={styles.Trouserstext}>Torusers</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Image source = {require('./assets/Shirts.png')} style={styles.ShirtsWrapper}/>
-        <Text style={styles.Shirtstext}>Shirts</Text>
+      <TouchableOpacity style={styles.itemContainer}>
+        <Image source={require('./assets/Shirts.png')} style={styles.itemImage} />
+        <Text style={styles.itemText}>Shirts</Text>
       </TouchableOpacity>
     </View>
   );
 };
-export default Flex;
 
+const DescriptionItems =() =>{
+
+  return(
+      <ScrollView>
+          <Text style={styles.categoryText}>Dresses</Text>
+          <TouchableOpacity style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion1.png')} style={styles.ImageWrapper} />
+            <Text style={styles.DescriptionStyle}>Womens one piece(Black)</Text>
+            <Text>30 CAD</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion2.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>NIKA Full Length Frock(Black)</Text>
+            <Text>50 CAD</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion3.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Mens Fashion</Text>
+            <Text>Starts from 40 CAD</Text>
+          </TouchableOpacity>
+      </ScrollView >
+  );
+};
 const styles = StyleSheet.create({
-  Felxcontainer:{
-    flex:1,
-    flexDirection:'column',
-    alignContent:'space-between',
-    alignItems :'center',
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    paddingTop: Platform.OS === 'android' ? 0 : 0, // Adjust top padding for Android
+  },
+  titleContainer: {
     width: '100%',
-    
   },
-
-  titleContainer : {
-    width:'100%'
-
+  title: {
+    fontSize: 25,
+    color: '#333',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: 0,
+    right: 0,
+    transform: [{ translateY: -12.5 }],
   },
-  header:{
-
+  titleBG: {
+    width: '100%',
+    height: 50,
   },
-  title:{
-      fontSize: 25,
-      color: '#333',
-      fontWeight: 'bold',
-      textAlign:'center',
+  imagecontainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 20,
   },
-  titleBG:{
-  
+  itemContainer: {
+    alignItems: 'center',
+    margin: 10,
   },
-  imagecontainer:{
-    flex:1,
-    flexDirection:'row',
-    alignContent:'space-between',
-    alignItems:'stretch',
-    position:'relative',
-    left:-160
+  itemImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
   },
-  GymWearWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
-    position:'relative',
-    top: 10
+  itemText: {
+    textAlign: 'center',
+    marginTop: 5,
   },
-  
-  WatchesWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
-    position:'relative',
-    right:-80,
-    top:-80
+  categoryText: {
+    textAlign: 'center',
+    marginTop: 20,
+    fontWeight: 'bold',
+    fontSize: 16,
   },
-  ShoesWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
-    position:'relative',
-    right:-160,
-    top:-170
+  descriptionItem:{
+    alignItems: 'center',
+    marginVertical: 10,
   },
-  TrousersWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
-    position:'relative',
-    right:-240,
-    top:-260
+  ImageWrapper: {
+    width: '100%',
+    height: 170,
+    marginVertical: 10,
   },
-  ShirtsWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
-    position:'relative',
-    right:-320,
-    top:-350
+  DescriptionStyle :{
   },
-  GymWeartext:{
-    textAlign:'center',
-    top:10
-  },
-  Watchestext:{
-    textAlign:'center',
-    top:-80,
-    right:-80
-  },
-  Shoestext:{
-    textAlign:'center',
-    top:-170,
-    right:-160
-
-  },
-  Trouserstext:{
-    textAlign:'center',
-    top:-260,
-    right:-240
-  },
-  Shirtstext:{
-    textAlign:'center',
-    top:-347,
-    right:-320
-  }
-})
+});
 
 const SBStyles = StyleSheet.create({
   container: {
@@ -174,10 +152,7 @@ const SBStyles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
     padding: 10,
-    paddingTop: 10,
-    flexDirection: 'column',
-    alignContent:'space-around',
-    marginTop : 5
+    marginTop: 5,
   },
   input: {
     height: 20,
@@ -185,3 +160,5 @@ const SBStyles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default Flex;
