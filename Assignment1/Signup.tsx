@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 const Signup = () => {
+  const [firstName, setFirstName] = useState('');
+  const [middleName, setMiddleName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -13,7 +16,23 @@ const Signup = () => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Text style={styles.logo}>Welcome</Text>
+        <Text style={styles.logo}>OneStopShop</Text>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="First Name..."
+            placeholderTextColor="#000000"
+            onChangeText={(text) => setFirstName(text)}
+          />
+        </View>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
+            placeholder="Last Name..."
+            placeholderTextColor="#000000"
+            onChangeText={(text) => setLastName(text)}
+          />
+        </View>
         <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
@@ -64,7 +83,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   inputView: {
-    width: '80%',
+    width: '60%',
     backgroundColor: '#fff',
     borderRadius: 25,
     height: 50,
@@ -74,11 +93,11 @@ const styles = StyleSheet.create({
   },
   inputText: {
     height: 50,
-    color: '#009688',
+    color: '#000000',
   },
   signupBtn: {
-    width: '50%',
-    backgroundColor: '#6b8df2',
+    width: '30%',
+    backgroundColor: '#0c610c',
     borderRadius: 15,
     height: 50,
     marginBottom: 20,
@@ -86,7 +105,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   signupText: {
-    color: '#fafafa',
+    color: '#00000',
     fontSize: 18,
   },
 });
