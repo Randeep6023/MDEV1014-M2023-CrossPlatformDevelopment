@@ -28,6 +28,14 @@ const Signup = () => {
         <View style={styles.inputView}>
           <TextInput
             style={styles.inputText}
+            placeholder="Middle Name..."
+            placeholderTextColor="#000000"
+            onChangeText={(text) => setMiddleName(text)}
+          />
+        </View>
+        <View style={styles.inputView}>
+          <TextInput
+            style={styles.inputText}
             placeholder="Last Name..."
             placeholderTextColor="#000000"
             onChangeText={(text) => setLastName(text)}
@@ -83,7 +91,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   inputView: {
-    width: '60%',
+    width: '80%',
     backgroundColor: '#fff',
     borderRadius: 25,
     height: 50,
@@ -96,7 +104,7 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   signupBtn: {
-    width: '30%',
+    width: '80%',
     backgroundColor: '#0c610c',
     borderRadius: 15,
     height: 50,
@@ -105,7 +113,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   signupText: {
-    color: '#00000',
+    color: '#ffffff',
     fontSize: 18,
   },
 });
