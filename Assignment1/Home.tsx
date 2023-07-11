@@ -14,11 +14,10 @@ const Flex = () =>{
 const HomeScreen = () => {
   const [alignSelf, setAlignSelf] = useState<FlexAlignType>('stretch');
   return (
-    <TouchableOpacity>
-       <ImageBackground source={require('./assets/home.webp')} style = {styles.titleBG}>
-          <Text style={styles.title}>Shop it!</Text>
-        </ImageBackground>
-    </TouchableOpacity>
+    
+    <ImageBackground source={require('./assets/home.webp')} style = {styles.titleBG}>
+      <Text style={styles.title}>Shop it!</Text>
+    </ImageBackground>
     
   );
 };
@@ -39,42 +38,28 @@ const SearchBox = () => {
 };
 
 const ContentList = () => {
-  const categories = [
-    {
-      name: 'Fashion',
-      icon: 'ios-shirt',
-    },
-    {
-      name: 'Electronics',
-      icon: 'ios-headphones',
-    },
-    {
-      name: 'Shoes',
-      icon: 'ios-shoe',
-    },
-  ];
   return(
     <View>
-      <View>
-        <Image source = {require('./assets/GymWear.png')} style={styles.ImageWrapper}/>
-        </View>
-      <Text style={styles.catogarytext}>Gym Wear</Text>
-      <View>
-        <Image source = {require('./assets/Watches.png')} style={styles.ImageWrapper}/>
-        <Text style={styles.catogarytext}>Watches</Text>
-      </View>
-      <View>
-        <Image source = {require('./assets/Shoes.png')} style={styles.ImageWrapper}/>
-        <Text style={styles.catogarytext}>Shoes</Text>
-      </View>
-      <View>
-        <Image source = {require('./assets/Trousers.png')} style={styles.ImageWrapper}/>
-        <Text style={styles.catogarytext}>Torusers</Text>
-      </View>
-      <View>
-        <Image source = {require('./assets/Shirts.png')} style={styles.ImageWrapper}/>
-        <Text style={styles.catogarytext}>Shirts</Text>
-      </View>
+      <TouchableOpacity>
+        <Image source = {require('./assets/GymWear.png')} style={styles.GymWearWrapper}/>
+        <Text style={styles.GymWeartext}>Gym Wear</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image source = {require('./assets/Watches.png')} style={styles.WatchesWrapper}/>
+        <Text style={styles.Watchestext}>Watches</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image source = {require('./assets/Shoes.png')} style={styles.ShoesWrapper}/>
+        <Text style={styles.Shoestext}>Shoes</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image source = {require('./assets/Trousers.png')} style={styles.TrousersWrapper}/>
+        <Text style={styles.Trouserstext}>Torusers</Text>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image source = {require('./assets/Shirts.png')} style={styles.ShirtsWrapper}/>
+        <Text style={styles.Shirtstext}>Shirts</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -84,6 +69,7 @@ const styles = StyleSheet.create({
   Felxcontainer:{
     flex:1,
     flexDirection:'column',
+    alignContent:'space-between',
     alignItems :'center',
     width: '100%',
     
@@ -103,20 +89,80 @@ const styles = StyleSheet.create({
       textAlign:'center',
   },
   titleBG:{
-    
-  },
-  ImageWrapper:{
-    height:70,
-    width:70,
-    borderRadius:35,
+  
   },
   imagecontainer:{
     flex:1,
     flexDirection:'row',
-    alignContent:'space-between'
+    alignContent:'space-between',
+    alignItems:'stretch',
+    position:'relative',
+    left:-160
   },
-  catogarytext:{
-    textAlign:'center'
+  GymWearWrapper:{
+    height:70,
+    width:70,
+    borderRadius:35,
+    position:'relative',
+    top: 10
+  },
+  
+  WatchesWrapper:{
+    height:70,
+    width:70,
+    borderRadius:35,
+    position:'relative',
+    right:-80,
+    top:-80
+  },
+  ShoesWrapper:{
+    height:70,
+    width:70,
+    borderRadius:35,
+    position:'relative',
+    right:-160,
+    top:-170
+  },
+  TrousersWrapper:{
+    height:70,
+    width:70,
+    borderRadius:35,
+    position:'relative',
+    right:-240,
+    top:-260
+  },
+  ShirtsWrapper:{
+    height:70,
+    width:70,
+    borderRadius:35,
+    position:'relative',
+    right:-320,
+    top:-350
+  },
+  GymWeartext:{
+    textAlign:'center',
+    top:10
+  },
+  Watchestext:{
+    textAlign:'center',
+    top:-80,
+    right:-80
+  },
+  Shoestext:{
+    textAlign:'center',
+    top:-170,
+    right:-160
+
+  },
+  Trouserstext:{
+    textAlign:'center',
+    top:-260,
+    right:-240
+  },
+  Shirtstext:{
+    textAlign:'center',
+    top:-347,
+    right:-320
   }
 })
 
