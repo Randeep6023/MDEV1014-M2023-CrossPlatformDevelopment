@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontSize: 25,
+    fontSize: Platform.OS == "web" ? 70 : "25",
     color: '#333',
     fontWeight: 'bold',
     textAlign: 'center',
