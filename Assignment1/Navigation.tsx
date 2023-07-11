@@ -16,6 +16,10 @@ const Navigation = () => {
     navigation.navigate('Login');
   };
 
+  const Signup = () => {
+    navigation.navigate('Signup');
+  };
+
   const OrderHistory = () => {
     navigation.navigate('OrderHistory');
   };
@@ -50,8 +54,14 @@ const Navigation = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Login}>
-                <ImageBackground source={require('./assets/login.avif')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/login.jpg')} style={styles.productImage}>
                         <Text style={styles.textArea}>Login</Text>
+                    </ImageBackground>
+                </TouchableOpacity>
+
+                <TouchableOpacity style = {styles.productContainer} onPress={Signup}>
+                <ImageBackground source={require('./assets/Signup.jpg')} style={styles.productImage}>
+                        <Text style={styles.textArea}>Signup</Text>
                     </ImageBackground>
                 </TouchableOpacity>
 
