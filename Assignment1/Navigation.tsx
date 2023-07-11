@@ -54,7 +54,7 @@ const Navigation = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.productContainer} onPress={Login}>
-                <ImageBackground source={require('./assets/login.jpg')} style={styles.productImage}>
+                <ImageBackground source={require('./assets/Login.jpg')} style={styles.productImage}>
                         <Text style={styles.textArea}>Login</Text>
                     </ImageBackground>
                 </TouchableOpacity>
