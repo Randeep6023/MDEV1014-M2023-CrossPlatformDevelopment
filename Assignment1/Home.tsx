@@ -4,9 +4,9 @@ import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, Imag
 const Flex = () => {
   return (
     <View style={styles.container}>
-      <HomeScreen />
       <SearchBox />
       <ContentList />
+      <HomeScreen />
       <DescriptionItems/>
     </View>
   );
@@ -15,7 +15,7 @@ const Flex = () => {
 const HomeScreen = () => {
   return (
     <View style={styles.titleContainer}>
-      <Image source={require('./assets/home.webp')} style={styles.titleBG} />
+      <Image source={require('./assets/HomeShopping.jpeg')} style={styles.titleBG} />
       <Text style={styles.title}>Shop it!</Text>
     </View>
   );
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingTop: Platform.OS === 'android' ? 0 : 0, // Adjust top padding for Android
+    backgroundColor: '#66BB6A',
   },
   titleContainer: {
     width: '100%',
@@ -104,7 +105,8 @@ const styles = StyleSheet.create({
   },
   titleBG: {
     width: '100%',
-    height: 50,
+    height: Platform.OS == "web" ? 600 : 200,
+    resizeMode : "cover"
   },
   imagecontainer: {
     flexDirection: 'row',
