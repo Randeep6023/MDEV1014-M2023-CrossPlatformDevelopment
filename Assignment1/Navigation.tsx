@@ -38,11 +38,11 @@ const Navigation = () => {
 
     return(
         <SafeAreaView style = {styles.wrapper}>
-            <View style = {[styles.boxStyle, styles.topBar]}>
+            {/* <View style = {[styles.boxStyle, styles.topBar]}>
                 <View style = {styles.textArea}>
                     <Text style = {styles.screenText}>Navigation</Text>
                 </View>
-            </View>
+            </View> */}
 
 
 

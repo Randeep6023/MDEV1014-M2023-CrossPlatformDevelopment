@@ -21,7 +21,11 @@ import { StyleSheet, Text, View, TextInput} from 'react-native';
 const App = () => {
   return (
     <><NavigationContainer>
-      <Stack.Navigator initialRouteName="Navigation">
+      <Stack.Navigator screenOptions={{
+        headerStyle: {
+          backgroundColor: '#66BB6A', // Set your desired background color here
+        },
+      }} initialRouteName="Navigation">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Login" component={Login} />

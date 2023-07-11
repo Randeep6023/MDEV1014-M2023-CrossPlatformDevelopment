@@ -8,20 +8,25 @@ const SearchResult = () => {
             <View style = {[styles.boxStyle, styles.topBar]}>
                 <Image source={require('./assets/menuImage.jpg')} style = {styles.menuIcon}/>
                 <View style = {styles.textArea}>
-                    <Text style = {styles.screenText}>Search Results</Text>
+                    {/* <Text style = {styles.screenText}>Search Results</Text> */}
+                    <View style = {styles.box1content}>
+                        <Image source = {require('./assets/searchIcon.png')} style = {styles.searchIcon} />
+                        <Text style = {styles.searchText}>Table</Text>
+                        <Image source = {require('./assets/cancelIcon.png')} style = {styles.cancelIcon} />
+                    </View>
                 </View>
                 <Image source={require('./assets/cartIcon.png')} style = {styles.cartIcon} />
             </View>
 
 
-            <View style = {[styles.boxStyle, styles.box1]}>
-                {/* <Image source={require('./assets/menuImage.jpg')} style = {styles.menuIcon}/> */}
+            {/* <View style = {[styles.boxStyle, styles.box1]}>
+                
                 <View style = {styles.box1content}>
                     <Image source = {require('./assets/searchIcon.png')} style = {styles.searchIcon} />
                     <Text style = {styles.searchText}>Table</Text>
                     <Image source = {require('./assets/cancelIcon.png')} style = {styles.cancelIcon} />
                 </View>
-            </View>
+            </View> */}
 
 
             <View style = {[styles.boxStyle, styles.box2]}>
@@ -247,7 +252,8 @@ const styles = StyleSheet.create({
     menuIcon : {
         width : 40,
         height : 40,
-        marginLeft : 10,
+        marginLeft : 1,
+        marginRight : 5,
         backgroundColor : "#66BB6A",
         borderRadius : 5
     },
@@ -255,7 +261,8 @@ const styles = StyleSheet.create({
         width : 40,
         height : 40,
         alignSelf : "flex-end",
-        marginRight : 10,
+        marginLeft : 5,
+        marginRight : 1,
         borderRadius : 5
     },
     box1 : {
@@ -273,6 +280,7 @@ const styles = StyleSheet.create({
         flexDirection : "row",
         alignItems : "center",
         height : 40,
+        flex : 1,
         //marginLeft : 10
     },
     searchText : {
