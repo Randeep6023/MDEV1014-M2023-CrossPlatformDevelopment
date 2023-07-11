@@ -76,6 +76,11 @@ const DescriptionItems =() =>{
             <Text style={styles.DescriptionStyle}>NIKA Full Length Frock(Black)</Text>
             <Text>50 CAD</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion3.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Mens Fashion</Text>
+            <Text>Starts from 40 CAD</Text>
+          </TouchableOpacity>
       </View >
   );
 };
@@ -138,6 +143,8 @@ const styles = StyleSheet.create({
     alignContent:'center',
     justifyContent:'space-evenly',
     marginVertical: 10,
+    width: 150,
+    height:200,
   },
   DescriptionStyle :{
   },
