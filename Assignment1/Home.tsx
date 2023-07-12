@@ -64,23 +64,40 @@ const ContentList = () => {
 const DescriptionItems =() =>{
 
   return(
-      <View>
-          <Text style={styles.categoryText}>Dresses</Text>
-          <TouchableOpacity style={styles.descriptionItem}>
+      <View style = {styles.categoryContainer}>
+          <Text style={styles.categoryText}>Women Dresses</Text>
+          <View style = {styles.categoryImageContainer}>
+            <View style={styles.descriptionItem}>
             <Image source={require('./assets/Fashion1.png')} style={styles.ImageWrapper} />
-            <Text style={styles.DescriptionStyle}>Womens one piece(Black)</Text>
+            <Text style={styles.DescriptionStyle}>Short Balck Dress</Text>
             <Text>30 CAD</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.descriptionItem}>
+          </View>
+          <View style={styles.descriptionItem}>
             <Image source={require('./assets/Fashion2.png')} style={styles.ImageWrapper}/>
-            <Text style={styles.DescriptionStyle}>NIKA Full Length Frock(Black)</Text>
-            <Text>50 CAD</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.descriptionItem}>
-            <Image source={require('./assets/Fashion3.png')} style={styles.ImageWrapper}/>
-            <Text style={styles.DescriptionStyle}>Mens Fashion</Text>
+            <Text style={styles.DescriptionStyle}>NIKA Full Length Frock</Text>
+            <Text>99 CAD</Text>
+          </View>
+          <View style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion4.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Women Short Green Dress</Text>
+            <Text>Starts from 69 CAD</Text>
+          </View>
+          <View style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion5.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Long Net Maxi</Text>
             <Text>Starts from 40 CAD</Text>
-          </TouchableOpacity>
+          </View>
+          <View style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion6.png')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Red Short Dress</Text>
+            <Text>Starts from 80 CAD</Text>
+          </View>
+          <View style={styles.descriptionItem}>
+            <Image source={require('./assets/Fashion7.jpeg')} style={styles.ImageWrapper}/>
+            <Text style={styles.DescriptionStyle}>Lace Dress</Text>
+            <Text>Starts from 120 CAD</Text>
+          </View> 
+          </View>
       </View >
   );
 };
@@ -138,6 +155,7 @@ const styles = StyleSheet.create({
   descriptionItem:{
     alignItems: 'center',
     marginVertical: 10,
+    marginLeft : 10
   },
   ImageWrapper: {
     alignContent:'center',
@@ -148,6 +166,18 @@ const styles = StyleSheet.create({
   },
   DescriptionStyle :{
   },
+  categoryContainer: {
+    flexDirection: "column",
+    alignContent: "center",
+    backgroundColor: "#A7D3A9",
+    borderRadius: 30,
+    margin: Platform.OS == "web" ? 20 : 10
+  },
+  categoryImageContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center"
+  }
 });
 
 const SBStyles = StyleSheet.create({
