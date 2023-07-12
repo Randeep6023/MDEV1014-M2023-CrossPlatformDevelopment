@@ -182,19 +182,19 @@ const styles = StyleSheet.create({
 
 const SBStyles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+  },
+  input: {
     width: '90%',
     height: 40,
     borderRadius: 15,
     borderColor: '#ccc',
     borderWidth: 1,
-    padding: 10,
-    marginTop: 5,
+    paddingHorizontal: 10,
     backgroundColor:'white',
-  },
-  input: {
-    height: 20,
-    color: '#333',
-    fontSize: 16,
   },
 });
 
