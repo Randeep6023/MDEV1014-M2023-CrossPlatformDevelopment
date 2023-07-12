@@ -25,7 +25,7 @@ const App = () => {
         headerStyle: {
           backgroundColor: '#66BB6A', // Set your desired background color here
         },
-      }} initialRouteName="Navigation">
+      }} initialRouteName="OneStopShop">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Login" component={Login} />
@@ -33,7 +33,7 @@ const App = () => {
         <Stack.Screen name="SearchResult" component={SearchResult} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="OrderHistory" component={OrderHistory} />
-        <Stack.Screen name="Navigation" component={Navigation} />
+        <Stack.Screen name="OneStopShop" component={Navigation} />
         {/* Other screen components */}
       </Stack.Navigator>
     </NavigationContainer><View style={styles.container}>
