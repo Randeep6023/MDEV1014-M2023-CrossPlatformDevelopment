@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
   imagecontainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
-    marginTop: 20,
+    justifyContent: 'space-evenly',
+    marginTop: 7,
   },
   itemContainer: {
     alignItems: 'center',
@@ -185,7 +185,7 @@ const SBStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    
+    marginTop: 7
   },
   input: {
     width: '90%',
