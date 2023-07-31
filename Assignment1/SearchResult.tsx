@@ -2,11 +2,10 @@ import React from "react";
 import { Button, Platform, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 import { Text, View, Image } from "react-native";
 
-const SearchResult = () => {
+const SearchResult = ({navigation}) => {
     return(
         <SafeAreaView style = {styles.wrapper}>
             <View style = {[styles.boxStyle, styles.topBar]}>
-                <Image source={require('./assets/menuImage.jpg')} style = {styles.menuIcon}/>
                 <View style = {styles.textArea}>
                     {/* <Text style = {styles.screenText}>Search Results</Text> */}
                     <View style = {styles.box1content}>
@@ -15,7 +14,11 @@ const SearchResult = () => {
                         <Image source = {require('./assets/cancelIcon.png')} style = {styles.cancelIcon} />
                     </View>
                 </View>
-                <Image source={require('./assets/cartIcon.png')} style = {styles.cartIcon} />
+                <TouchableOpacity onPress={() => {
+                    navigation.push('Cart');
+                    }}>
+                        <Image source={require('./assets/cartIcon.png')} style = {styles.cartIcon} />            
+                </TouchableOpacity>
             </View>
 
 
@@ -51,10 +54,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$100</Text><Text>10 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -83,10 +90,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$180</Text><Text>4 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -114,10 +125,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$230</Text><Text>20 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -145,10 +160,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$199</Text><Text>6 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -176,10 +195,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$160</Text><Text>15 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>
@@ -207,10 +230,14 @@ const SearchResult = () => {
                             <><Text style={styles.price}>$240</Text><Text>4 in stock</Text></>
                         )}
                         <View style = {styles.buttonContainer}>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Buy</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style = {styles.buttonStyle}>
+                            <TouchableOpacity style = {styles.buttonStyle} onPress={() => {
+                                    navigation.push('Cart');
+                                }}>
                                 <Text>Add to cart</Text>
                             </TouchableOpacity>
                         </View>

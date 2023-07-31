@@ -15,6 +15,7 @@ import Signup from './Signup';
 
 const Stack = createNativeStackNavigator();
 import { StyleSheet, Text, View, TextInput} from 'react-native';
+import GymWearResult from './GymWearResult';
 
 
 
