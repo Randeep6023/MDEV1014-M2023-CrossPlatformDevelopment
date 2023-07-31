@@ -10,7 +10,7 @@ const TrousersResult = ({navigation}) => {
                     {/* <Text style = {styles.screenText}>Search Results</Text> */}
                     <View style = {styles.box1content}>
                         <Image source = {require('./assets/searchIcon.png')} style = {styles.searchIcon} />
-                        <Text style = {styles.searchText}>Table</Text>
+                        <Text style = {styles.searchText}>Trousers</Text>
                         <Image source = {require('./assets/cancelIcon.png')} style = {styles.cancelIcon} />
                     </View>
                 </View>
