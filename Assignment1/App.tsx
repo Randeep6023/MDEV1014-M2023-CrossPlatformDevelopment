@@ -16,6 +16,7 @@ import Signup from './Signup';
 const Stack = createNativeStackNavigator();
 import { StyleSheet, Text, View, TextInput} from 'react-native';
 import GymWearResult from './GymWearResult';
+import ShoesResult from './ShoesResult';
 
 
 
@@ -31,7 +32,7 @@ const App = () => {
         <Stack.Screen name="Cart" component={Cart} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="SearchResult" component={SearchResult} />
+        <Stack.Screen name="SearchResult" component={GymWearResult} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="OrderHistory" component={OrderHistory} />
         <Stack.Screen name="OneStopShop" component={Navigation} />
