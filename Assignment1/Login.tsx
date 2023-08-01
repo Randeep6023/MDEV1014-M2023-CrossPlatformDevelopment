@@ -9,6 +9,9 @@ const Login = () => {
 
   const handleLogin = () => {
     // TODO: Perform login logic here
+    // For demonstration purposes, let's assume the login is successful
+    // and the user should be directed to the home page.
+    navigation.navigate('Home'); // Replace 'Home' with the actual name of your home page route.
   };
 
   const handleSignup = () => {
@@ -41,6 +44,9 @@ const Login = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.signupBtn} onPress={handleSignup}>
           <Text style={styles.signupText}>Sign Up</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.homeLink} onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.homeLinkText}>Login as Guest</Text>
         </TouchableOpacity>
       </View>
     </View>
