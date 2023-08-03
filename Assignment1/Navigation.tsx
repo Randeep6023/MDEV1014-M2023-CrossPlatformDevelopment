@@ -1,135 +1,74 @@
-import React from "react";
-import { Button, ImageBackground, Platform, SafeAreaView, StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, Image, Platform, ScrollView } from 'react-native';
+import Icon, { Icons } from '../Assignment1/components/Icon';
+import ColorScreen from './screens/ColorScreen';
 import { useNavigation } from '@react-navigation/native';
-
-const isWeb = Platform.OS === "web";
-
-const Navigation = () => {
-  const navigation = useNavigation();
-
-  const Home = () => {
-    navigation.navigate('Home');
-  };
-
-  const Login = () => {
-    navigation.navigate('Login');
-  };
-
-  const Signup = () => {
-    navigation.navigate('Signup');
-  };
-
-  const OrderHistory = () => {
-    navigation.navigate('OrderHistory');
-  };
-
-  const Profile = () => {
-    navigation.navigate('Profile');
-  };
-
-  const SearchResult = () => {
-    navigation.navigate('SearchResult');
-  };
-
-  const Cart = () => {
-    navigation.navigate('Cart');
-  };
-
-  return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={[styles.boxStyle, styles.topBar]}>
-        <View style={styles.textArea}>
-          <Text style={styles.screenText, styles.firstPageText}>Navigation</Text>
-        </View>
-      </View>
-
-      <View style={[styles.boxStyle, styles.box2]}>
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={Home}>
-          <Text style={styles.text}>Home Page</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={Login}>
-          <Text style={styles.text}>Login</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={SearchResult}>
-          <Text style={styles.text}>Search Result</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={Cart}>
-          <Text style={styles.text}>Cart</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={Profile}>
-          <Text style={styles.text}>Profile</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={[styles.productContainer, styles.darkestGreen]} onPress={OrderHistory}>
-          <Text style={styles.text}>Order History</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import OrderHistoryScreen from './OrderHistory';
+import CartScreen from './Cart';
+import ProfileScreen from './Profile';
+import Flex from './Home';
+const Tab = createBottomTabNavigator();
+type TabItem = {
+  route: string;
+  label: string;
+  type: keyof typeof Icons;
+  activeIcon: string;
+  inActiveIcon: string;
+  component: React.ComponentType<any>; 
 };
 
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: '#C5E1A5',
+const TabArr: TabItem[] = [
+  {
+    route: 'Home',
+    label: 'Home',
+    type: 'Ionicons',
+    activeIcon: 'grid',
+    inActiveIcon: 'grid-outline',
+    component: Flex,
   },
-  boxStyle: {
-    width: "100%",
-    padding: 10,
-    backgroundColor: '#C8E6C9',
-    alignItems: "center",
+  {
+    route: 'History',
+    label: 'History',
+    type: 'Ionicons',
+    activeIcon: 'grid',
+    inActiveIcon: 'grid-outline',
+    component: OrderHistoryScreen,
   },
-  firstPageText: {
-    fontSize: 50,
+  {
+    route: 'Cart',
+    label: 'Cart',
+    type: 'MaterialCommunityIcons',
+    activeIcon: 'heart-plus',
+    inActiveIcon: 'heart-plus-outline',
+    component: CartScreen,
   },
-  topBar: {
-    backgroundColor: '##E8F5E9',
-    justifyContent: "flex-start",
-    flexDirection: "row",
-    marginTop: Platform.OS === "android" ? 20 : undefined,
-    alignItems: "center",
+  {
+    route: 'Profile',
+    label: 'Profile',
+    type: 'MaterialCommunityIcons',
+    activeIcon: 'timeline-plus',
+    inActiveIcon: 'timeline-plus-outline',
+    component: ProfileScreen,
   },
-  textArea: {
-    flex: 1,
-    alignItems: "center",
-    textAlign: "center",
-    fontSize: 25,
-  },
-  screenText: {
-    fontSize: 30,
-    alignSelf: "center",
-    justifyContent: Platform.OS === "web" ? "center" : "flex-start",
-    alignItems: "center",
-    color: "black",
-  },
-  box2: {
-    flex: 1,
-    justifyContent: "flex-start",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  productContainer: {
-    width: "80%",
-    marginVertical: 10,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    height: 100,
-  },
-  darkestGreen: {
-    backgroundColor: '#66BB6A',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "black",
-    textAlign: "center",
-  },
-});
+];
+const Navigation = () => {
+  return (
+<Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+          {TabArr.map((item, index) => {
+            return (
+              <Tab.Screen key={index} name={item.route} component={item.component}
+                options={{
+                  tabBarLabel: item.label,
+                  tabBarIcon:({color, focused}) => (<Icon type ={item.type} name={focused ? item.activeIcon : item.inActiveIcon} color={color}/>)
+                }}
+              />
+            )
+          })}
+</Tab.Navigator>
+  );};
 
 export default Navigation;

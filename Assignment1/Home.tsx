@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, TextInput, Image, Platform, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Flex = () => {
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <SearchBox />
-        <ContentList />
-        <HomeScreen />
-        <DescriptionItems/>
-      </ScrollView>
+        <ScrollView>
+          <SearchBox />
+          <ContentList />
+          <HomeScreen />
+          <DescriptionItems/>
+        </ScrollView>
     </View>
   );
 };
@@ -39,21 +41,34 @@ const SearchBox = () => {
 };
 
 const ContentList = () => {
+  const navigation = useNavigation();
+  const handleImageClick = (tabName: string) => {
+    navigation.navigate('GymWearResult');
+  };
+  const ShoesWearClick = (tabName: string) => {
+    navigation.navigate('ShoesResult');
+  }
+  const TrousersWearClick = (tabName: string) => {
+    navigation.navigate('TrousersResult');
+  }
+  const ShirtsWearClick = (tabName: string) => {
+    navigation.navigate('ShirtsResult');
+  }
   return (
     <View style={styles.imagecontainer}>
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={() => handleImageClick('GymWearResult')}>
         <Image source={require('./assets/GymWear.png')} style={styles.itemImage} />
         <Text style={styles.itemText}>Gym Wear</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={() => ShoesWearClick('ShoesResult')}>
         <Image source={require('./assets/Shoes.png')} style={styles.itemImage} />
         <Text style={styles.itemText}>Shoes</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={() => TrousersWearClick('TrousersResult')}>
         <Image source={require('./assets/Trousers.png')} style={styles.itemImage} />
         <Text style={styles.itemText}>Trousers</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={() => ShirtsWearClick('ShirtsResult')}>
         <Image source={require('./assets/Shirts.png')} style={styles.itemImage} />
         <Text style={styles.itemText}>Shirts</Text>
       </TouchableOpacity>
@@ -177,7 +192,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center"
-  }
+  },
+  searchIcon : {
+        width : 20,
+        height : 20,
+        marginLeft : 10
+    },
+    cancelIcon : {
+        width : 20,
+        height : 20,
+        marginRight : 10
+    },
 });
 
 const SBStyles = StyleSheet.create({
